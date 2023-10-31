@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from atexit import register
+from django.shortcuts import redirect, render
 from .forms import RegistroForm  # Asegúrate de importar el formulario personalizado
 
 def registro(request):
@@ -7,8 +8,8 @@ def registro(request):
         if form.is_valid():
             user = form.save()
             # Inicia sesión automáticamente al usuario
-            ingreso(request, user)
-            return redirect('lista_ingresos')  # Redirige a la página deseada después del registro
+            register(request, user)
+            return redirect('index')  # Redirige a la página deseada después del registro
     else:
         form = RegistroForm()
 
