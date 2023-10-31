@@ -1,0 +1,6 @@
+<form method="post">
+    {% csrf_token %}
+    <label for="motivo">Motivo de ingreso:</label>
+    <input type="text" name="motivo" required>
+    <button type="submit">Agregar Ingreso</button>
+</form>
