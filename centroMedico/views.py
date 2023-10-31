@@ -12,5 +12,5 @@ def registro(request):
     else:
         form = RegistroForm()
 
-    return render(request, 'registration/registro.html', {'form': form})
+    return render(request, 'templates/registro.html', {'form': form})
 
